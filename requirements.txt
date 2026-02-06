@@ -1,0 +1,32 @@
+# Core dependencies
+torch>=2.0.0
+torchvision>=0.15.0
+diffusers>=0.21.0
+transformers>=4.30.0
+accelerate>=0.20.0
+
+# Optimization libraries
+xformers>=0.0.20  # Memory-efficient attention
+bitsandbytes>=0.41.0  # Quantization
+
+# Image processing
+Pillow>=9.5.0
+opencv-python>=4.8.0
+
+# Metrics and evaluation
+torchmetrics>=1.0.0
+pytorch-msssim>=1.0.0
+lpips>=0.1.4
+
+# Utilities
+numpy>=1.24.0
+scipy>=1.10.0
+matplotlib>=3.7.0
+tqdm>=4.65.0
+
+# Optional: For compression experiments
+arithmetic-coding>=0.1.0
+
+# Development
+jupyter>=1.0.0
+ipywidgets>=8.0.0
