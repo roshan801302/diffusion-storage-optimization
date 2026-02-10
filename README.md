@@ -79,8 +79,9 @@ If you use this work, please cite:
 ```bibtex
 @misc{diffusion-optimization-2026,
   title={Architectural and Algorithmic Optimization for Diffusion Models},
-  author={Your Name},
-  year={2026}
+  author={rr},
+  year={2026},
+  url={https://github.com/roshan801302/diffusion-storage-optimization/tree/main}
 }
 ```
 

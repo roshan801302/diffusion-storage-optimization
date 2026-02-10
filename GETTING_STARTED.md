@@ -6,7 +6,7 @@
 
 ```bash
 # Clone the repository
-git clone <your-repo-url>
+git clone https://github.com/roshan801302/diffusion-storage-optimization.git
 cd diffusion-optimization
 
 # Create virtual environment

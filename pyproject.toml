@@ -1,0 +1,78 @@
+[build-system]
+requires = ["setuptools>=45", "wheel", "setuptools_scm[toml]>=6.2"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "nvfp4-ddim-optimizer"
+version = "0.1.0"
+description = "Storage and memory optimization suite for diffusion models"
+readme = "README.md"
+requires-python = ">=3.8"
+license = {text = "MIT"}
+authors = [
+    {name = "rr", email = "rr@example.com"}
+]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Developers",
+    "Intended Audience :: Science/Research",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: POSIX :: Linux",
+    "Operating System :: Other OS",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Topic :: Scientific/Engineering :: Artificial Intelligence",
+]
+
+dependencies = [
+    "torch>=2.0.0",
+    "torchvision>=0.15.0",
+    "diffusers>=0.21.0",
+    "transformers>=4.30.0",
+    "accelerate>=0.20.0",
+    "Pillow>=9.5.0",
+    "numpy>=1.24.0",
+    "scipy>=1.10.0",
+    "tqdm>=4.65.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=7.0.0",
+    "pytest-cov>=4.0.0",
+    "hypothesis>=6.0.0",
+    "black>=23.0.0",
+    "flake8>=6.0.0",
+    "mypy>=1.0.0",
+]
+metrics = [
+    "lpips>=0.1.4",
+    "pytorch-msssim>=1.0.0",
+    "torchmetrics>=1.0.0",
+]
+
+[project.urls]
+Homepage = "https://github.com/roshan801302/diffusion-storage-optimization/tree/main"
+Repository = "https://github.com/roshan801302/diffusion-storage-optimization/tree/main"
+Documentation = "https://github.com/roshan801302/diffusion-storage-optimization/tree/main/docs"
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+python_files = ["test_*.py"]
+python_classes = ["Test*"]
+python_functions = ["test_*"]
+addopts = "-v --cov=src/nvfp4_ddim_optimizer --cov-report=html --cov-report=term"
+
+[tool.black]
+line-length = 100
+target-version = ['py38', 'py39', 'py310', 'py311']
+include = '\.pyi?$'
+
+[tool.mypy]
+python_version = "3.8"
+warn_return_any = true
+warn_unused_configs = true
+disallow_untyped_defs = false
