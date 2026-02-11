@@ -19,26 +19,31 @@ def check_python_version():
 
 
 def check_platform():
-    """Check if running on Linux or HarmonyOS."""
+    """Check if running on supported platform."""
     print("\nChecking platform...")
     system = platform.system()
     print(f"  Platform: {system}")
     
-    # Check for HarmonyOS
-    try:
-        with open("/etc/os-release", "r") as f:
-            os_info = f.read()
-            if "HarmonyOS" in os_info or "OpenHarmony" in os_info:
-                print("  ✅ Running on HarmonyOS")
-                print("  ℹ️  CPU-only mode recommended for HarmonyOS")
-                return True
-    except FileNotFoundError:
-        pass
-    
+    # Check for OpenKylin
     if system == "Linux":
+        try:
+            with open("/etc/os-release", "r") as f:
+                os_info = f.read()
+                if "OpenKylin" in os_info or "openKylin" in os_info:
+                    print("  ✅ Running on OpenKylin")
+                    print("  ℹ️  Full support with CUDA (x86_64) or CPU (ARM64)")
+                    return True
+        except FileNotFoundError:
+            pass
         print("  ✅ Running on Linux")
+    elif system == "Windows":
+        print("  ✅ Running on Windows")
+        print("  ℹ️  For best performance, consider using WSL2 or native CUDA")
+    elif system == "Darwin":
+        print("  ✅ Running on macOS")
+        print("  ℹ️  CPU or Metal GPU support")
     else:
-        print(f"  ⚠️  Warning: Optimized for Linux/HarmonyOS, running on {system}")
+        print(f"  ⚠️  Running on {system} (experimental support)")
     
     return True
 

@@ -1,25 +1,18 @@
 # Quick Start Guide
 
-## ✅ What's Been Set Up
+## ✅ Multi-Platform Support
 
-Your NVFP4-DDIM Optimizer project is now ready for Linux! Here's what's been created:
-
-### 📁 Project Structure
-- **Core package**: `src/nvfp4_ddim_optimizer/` with all modules
-- **Data models**: Quantization and sampling configurations with validation
-- **Test infrastructure**: Pytest with fixtures and Hypothesis strategies
-- **Linux tools**: Installation script, Makefile, and comprehensive docs
-
-### 🐧 Linux-Specific Features
-- Automated installation script with GPU detection
-- Makefile for common commands
-- Proper file permissions for executables
-- Distribution-specific installation instructions
+NVFP4-DDIM Optimizer now supports:
+- ✅ **Linux** - Full CUDA GPU support (Stable)
+- ✅ **Windows** - Full CUDA GPU support (Stable)
+- ✅ **OpenKylin** - Full support, x86_64 CUDA / ARM64 CPU (Stable)
+- ✅ **macOS** - Metal GPU support (Community)
 
 ## 🚀 Installation (Choose One Method)
 
 ### Method 1: Automated (Recommended)
 
+**Linux / macOS / OpenKylin:**
 ```bash
 # Run the installation script
 ./install.sh
@@ -31,7 +24,19 @@ source venv/bin/activate
 python verify_setup.py
 ```
 
-### Method 2: Manual
+**Windows:**
+```powershell
+# Run PowerShell installation
+.\install_windows.ps1
+
+# Activate environment
+.\venv\Scripts\Activate.ps1
+
+# Verify installation
+python verify_setup.py
+```
+
+### Method 2: Manual (All Platforms)
 
 ```bash
 # Create virtual environment

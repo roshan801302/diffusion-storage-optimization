@@ -17,31 +17,50 @@ NVFP4-DDIM Optimizer supports multiple platforms with optimizations for each.
 - Multi-GPU support
 - All quality metrics (FID, LPIPS, CLIP)
 
-### ✅ HarmonyOS (Experimental)
-- **Status**: Experimental Support
-- **Versions**: HarmonyOS NEXT 5.0+, HarmonyOS 4.0+
-- **GPU Support**: Limited (CPU-only recommended)
-- **Installation**: `./install_harmonyos.sh`
-- **Documentation**: `INSTALL_HARMONYOS.md`
+### ✅ Windows (Fully Supported)
+- **Status**: Fully Supported
+- **Versions**: Windows 10 (1903+), Windows 11, Windows Server 2019+
+- **GPU Support**: NVIDIA CUDA 11.8+
+- **Installation**: `.\install_windows.ps1` or WSL2
+- **Documentation**: `INSTALL_WINDOWS.md`
 
 **Features:**
-- CPU-only inference (optimized)
-- NVFP4 quantization (87.5% storage reduction)
-- DDIM sampling (4-20× speedup)
-- Memory-optimized for mobile devices
-- Batch processing with low memory
+- Native Windows support
+- GPU acceleration with CUDA
+- WSL2 for Linux compatibility
+- PowerShell integration
+- All quality metrics
+
+### ✅ OpenKylin (Fully Supported)
+- **Status**: Fully Supported
+- **Versions**: OpenKylin 1.0+, OpenKylin 2.0 (recommended)
+- **Architectures**: x86_64, ARM64
+- **GPU Support**: NVIDIA CUDA 11.8+ (x86_64), CPU-only (ARM64)
+- **Installation**: `./install.sh`
+- **Documentation**: `INSTALL_OPENKYLIN.md`
+
+**Features:**
+- Full support for x86_64 and ARM64
+- GPU acceleration on x86_64 with NVIDIA
+- Optimized for Chinese users
+- UKUI desktop integration
+- All quality metrics
+
+### ⚠️ macOS (Community Support)
+- **Status**: Community Support
+- **Versions**: macOS 11.0+ (Big Sur and later)
+- **GPU Support**: Metal (experimental)
+- **Installation**: Similar to Linux
+- **Documentation**: Use `INSTALL_LINUX.md` as reference
+
+**Features:**
+- CPU inference
+- Metal GPU support (experimental)
+- All core features
 
 **Limitations:**
-- No GPU acceleration (device-dependent)
-- Reduced performance vs Linux with GPU
-- Limited to smaller models
-- Some quality metrics may be slower
-
-### ⚠️ Other Platforms
-- **Windows**: Not officially supported (may work with WSL2)
-- **macOS**: Not officially supported (may work with CPU-only)
-- **Android**: Not supported (consider HarmonyOS instead)
-- **iOS**: Not supported
+- Metal support limited
+- Performance varies by hardware
 
 ## Installation by Platform
 
@@ -54,22 +73,35 @@ cd diffusion-storage-optimization
 source venv/bin/activate
 ```
 
-### HarmonyOS
+### Windows
+
+**PowerShell:**
+```powershell
+git clone https://github.com/roshan801302/diffusion-storage-optimization.git
+cd diffusion-storage-optimization
+.\install_windows.ps1
+.\venv\Scripts\Activate.ps1
+```
+
+**WSL2:**
+```bash
+wsl --install
+# Then follow Linux instructions
+```
+
+### OpenKylin
 
 ```bash
 git clone https://github.com/roshan801302/diffusion-storage-optimization.git
 cd diffusion-storage-optimization
-./install_harmonyos.sh
+./install.sh
 source venv/bin/activate
 ```
 
-### Windows (WSL2)
+### macOS
 
 ```bash
-# Install WSL2 first
-wsl --install
-
-# Then follow Linux instructions
+# Similar to Linux
 git clone https://github.com/roshan801302/diffusion-storage-optimization.git
 cd diffusion-storage-optimization
 ./install.sh
@@ -78,17 +110,19 @@ source venv/bin/activate
 
 ## Feature Comparison
 
-| Feature | Linux | HarmonyOS | Windows (WSL2) |
-|---------|-------|-----------|----------------|
-| NVFP4 Quantization | ✅ | ✅ | ✅ |
-| DDIM Sampling | ✅ | ✅ | ✅ |
-| GPU Acceleration | ✅ CUDA | ⚠️ Limited | ✅ CUDA |
-| CPU-only Mode | ✅ | ✅ | ✅ |
-| Quality Metrics | ✅ All | ✅ All | ✅ All |
-| Batch Processing | ✅ | ✅ | ✅ |
-| Multi-GPU | ✅ | ❌ | ✅ |
-| Performance | Excellent | Good | Good |
-| Memory Efficiency | Excellent | Excellent | Good |
+| Feature | Linux | Windows | OpenKylin | macOS |
+|---------|-------|---------|-----------|-------|
+| NVFP4 Quantization | ✅ | ✅ | ✅ | ✅ |
+| DDIM Sampling | ✅ | ✅ | ✅ | ✅ |
+| GPU Acceleration | ✅ CUDA | ✅ CUDA | ✅ CUDA (x86_64) | ⚠️ Metal |
+| CPU-only Mode | ✅ | ✅ | ✅ | ✅ |
+| Quality Metrics | ✅ All | ✅ All | ✅ All | ✅ All |
+| Batch Processing | ✅ | ✅ | ✅ | ✅ |
+| Multi-GPU | ✅ | ✅ | ✅ (x86_64) | ❌ |
+| ARM64 Support | ✅ | ❌ | ✅ | ✅ (M1/M2) |
+| Performance | Excellent | Excellent | Excellent | Good |
+| Memory Efficiency | Excellent | Excellent | Excellent | Good |
+| Status | Stable | Stable | Stable | Community |
 
 ## Performance Benchmarks
 

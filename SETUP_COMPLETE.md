@@ -1,5 +1,14 @@
 # Setup Complete: NVFP4-DDIM Optimizer
 
+## 🌍 Multi-Platform Support
+
+**Supported Platforms:**
+- ✅ Linux (Stable - Full CUDA support)
+- ✅ Windows (Stable - Full CUDA support)
+- ✅ HarmonyOS (Experimental - CPU-optimized)
+- ✅ iOS (Experimental - Mobile)
+- ✅ macOS (Community - Metal support)
+
 ## ✅ Project Structure Created
 
 The following structure has been set up for Linux compatibility:
@@ -65,18 +74,32 @@ diffusion-storage-optimization/
 
 ## 🚀 Quick Start
 
-### Installation
+### Installation by Platform
 
+**Linux / macOS / HarmonyOS:**
 ```bash
 # Make installation script executable (if not already)
 chmod +x install.sh
 
 # Run installation
-./install.sh
+./install.sh  # or ./install_harmonyos.sh for HarmonyOS
 
 # Activate environment
 source venv/bin/activate
 ```
+
+**Windows:**
+```powershell
+# Run PowerShell installation
+.\install_windows.ps1
+
+# Activate environment
+.\venv\Scripts\Activate.ps1
+```
+
+**iOS:**
+- Use Pythonista, a-Shell, or Juno
+- See `INSTALL_IOS.md` for details
 
 ### Using Make Commands
 
@@ -140,8 +163,20 @@ To continue implementation, you can:
 
 ## 📚 Documentation
 
-- **Installation Guide**: `INSTALL_LINUX.md` - Detailed Linux setup instructions
+**Platform-Specific Guides:**
+- **Linux**: `INSTALL_LINUX.md` - Detailed Linux setup
+- **Windows**: `INSTALL_WINDOWS.md` - Windows installation guide
+- **HarmonyOS**: `INSTALL_HARMONYOS.md` - HarmonyOS setup
+- **iOS**: `INSTALL_IOS.md` - iOS installation guide
+- **Multi-Platform**: `MULTI_PLATFORM_COMPLETE.md` - All platforms overview
+
+**General Documentation:**
+- **Quick Start**: `QUICK_START.md` - Get started quickly
+- **Platform Support**: `PLATFORM_SUPPORT.md` - Feature comparison
+- **Quick Reference**: `PLATFORM_QUICK_REFERENCE.md` - Command reference
 - **Package README**: `src/nvfp4_ddim_optimizer/README.md` - Package overview
+
+**Specification:**
 - **Requirements**: `~/.kiro/specs/nvfp4-ddim-optimizer/requirements.md`
 - **Design**: `~/.kiro/specs/nvfp4-ddim-optimizer/design.md`
 - **Tasks**: `~/.kiro/specs/nvfp4-ddim-optimizer/tasks.md`
